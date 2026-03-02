@@ -2,10 +2,11 @@ package com.ramos.hexagonal.application.core.usecase;
 
 import com.ramos.hexagonal.application.core.domain.Customer;
 import com.ramos.hexagonal.application.ports.in.FindCustomerByIdInputPort;
+import com.ramos.hexagonal.application.ports.in.UpdateCustomerInputPort;
 import com.ramos.hexagonal.application.ports.out.FindAddressByZipCodeOutPutPort;
 import com.ramos.hexagonal.application.ports.out.UpdateCustomerOutputPort;
 
-public class UpdateCustomerByIdUseCase {
+public class UpdateCustomerByIdUseCase implements UpdateCustomerInputPort {
 
     private final FindCustomerByIdInputPort findCustomerByIdInputPort;
 
@@ -23,6 +24,7 @@ public class UpdateCustomerByIdUseCase {
         this.updateCustomerOutputPort = updateCustomerOutputPort;
     }
 
+    @Override
     public void update(Customer customer, String zipCode) {
         findCustomerByIdInputPort.find(customer.getId());
         var address = findAddressByZipCodeOutPutPort.find(zipCode);

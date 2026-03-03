@@ -6,7 +6,7 @@ import com.ramos.hexagonal.application.ports.in.UpdateCustomerInputPort;
 import com.ramos.hexagonal.application.ports.out.FindAddressByZipCodeOutPutPort;
 import com.ramos.hexagonal.application.ports.out.UpdateCustomerOutputPort;
 
-public class UpdateCustomerByIdUseCase implements UpdateCustomerInputPort {
+public class UpdateCustomerUseCase implements UpdateCustomerInputPort {
 
     private final FindCustomerByIdInputPort findCustomerByIdInputPort;
 
@@ -14,7 +14,7 @@ public class UpdateCustomerByIdUseCase implements UpdateCustomerInputPort {
 
     private final UpdateCustomerOutputPort updateCustomerOutputPort;
 
-    public UpdateCustomerByIdUseCase(
+    public UpdateCustomerUseCase(
             FindCustomerByIdInputPort findCustomerByIdInputPort,
             FindAddressByZipCodeOutPutPort findAddressByZipCodeOutPutPort,
             UpdateCustomerOutputPort updateCustomerOutputPort

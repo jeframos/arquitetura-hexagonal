@@ -2,19 +2,19 @@ package com.ramos.hexagonal.application.core.usecase;
 
 import com.ramos.hexagonal.application.core.domain.Customer;
 import com.ramos.hexagonal.application.ports.in.InsertCustomerInputPort;
-import com.ramos.hexagonal.application.ports.out.FindAddressByZipCodeOutPutPort;
+import com.ramos.hexagonal.application.ports.out.FindAddressByZipCodeOutputPort;
 import com.ramos.hexagonal.application.ports.out.InsertCustomerOutputPort;
 import com.ramos.hexagonal.application.ports.out.SendCpfForValidationOutputPort;
 
 public class InsertCustomerUseCase implements InsertCustomerInputPort {
 
-    private final FindAddressByZipCodeOutPutPort findAddressByZipCodeOutPutPort;
+    private final FindAddressByZipCodeOutputPort findAddressByZipCodeOutPutPort;
     private final InsertCustomerOutputPort insertCustomerOutputPort;
     private final SendCpfForValidationOutputPort sendCpfForValidationOutputPort;
 
 
     public InsertCustomerUseCase(
-            FindAddressByZipCodeOutPutPort findAddressByZipCodeOutPutPort,
+            FindAddressByZipCodeOutputPort findAddressByZipCodeOutPutPort,
             InsertCustomerOutputPort insertCustomerOutputPort,
             SendCpfForValidationOutputPort sendCpfForValidationOutputPort
     ) {
